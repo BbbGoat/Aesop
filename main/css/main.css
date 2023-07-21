@@ -1,0 +1,538 @@
+@charset "utf-8";
+
+/* 웹&앱PJ 메인페이지 CSS - main.css */
+
+
+
+/*************** 메인영역 ***************/
+main {
+    position: relative;
+}
+
+/******* section1 *******/
+/* 비디오박스 */
+#vidbx {
+    /* 부모박스 */
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+#vidbx::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(transparent,rgba(0, 0, 0, 0.3));
+    pointer-events: none;
+}
+.vidslide {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    cursor: move;
+    /* 드래그방지 */
+    app-region: no-drag;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+.vidslide li {
+    position: relative;
+    /* 등분할 */
+    flex: 1;
+}
+/* 비디오 공통클래스 */
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 블릿박스 */
+.indic {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    box-sizing: border-box;
+    padding: 10px 15px;
+}
+.indic li {
+    display: inline-flex;
+    flex: 1;
+    /* 두께 */
+    height: 7px;
+    /* 사이간격 */
+    margin: min(1vw,10px);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+/* 클래스 on */
+.indic li.on .bld {
+    width: 0;
+    opacity: .7;
+}
+.bld {
+    display: inline-block;
+    /* 게이지바 */
+    width: 0;
+    height: 100%;
+    opacity: 0;
+    background-color: #000;
+    transition: .3s ease-out;
+}
+/* 슬라이드 커버 */
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    /* background-color: #f00;
+    opacity: 0.5; */
+    display: none;
+}
+
+/****** section2 ******/
+#sigbx {
+    /* 최상위 부모박스 */
+    padding-top: 150px;
+    position: relative;
+    width: 100%;
+    height: 552px;
+    background-color: #fffef2;
+}
+.sigwrap  {
+    position: absolute;
+    display: flex;
+    
+    width: 100%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+/* 텍스트 공통박스 */
+.tit2 {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 20px;
+    margin: 0 5%;
+    width: 400px;
+    height: 100%;
+    font-family: 'IBM Plex Sans KR', 'EB Garamond';
+    color: #333;
+}
+.tit {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 20px;
+    margin-left: 5%;
+    width: 450px;
+    height: 100%;
+    font-family: 'IBM Plex Sans KR', 'EB Garamond';
+    color: #333;
+}
+.tit > h2 {
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+.tit > h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.tit > p {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* //////////////////////////////////////////// */
+
+/* 스와이퍼 커스텀 */
+.swiper {
+    width: 100%;
+    height: 450px;
+    aspect-ratio: 1/1.3;
+}
+.ban {
+    width: 100%;
+    /* margin-right: 50px; */
+}
+.swiper-slide > img {
+    /* display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; */
+    position: relative;
+    display: block;
+    width: 80%;
+    /* transform: translateY(-50%); */
+    /* top: 50%; */
+    margin: 0 auto;
+    object-fit: cover;
+}
+.txtarea {
+    position: relative;
+    top: 10px;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 2.0;
+    color: #333;
+}
+.morebtn {
+    font-size: 1.4rem;
+    text-decoration: none;
+    width: 150px;
+    height: 40px;
+
+    background-color: transparent;
+    margin-top: 50px;
+    border: 1px solid rgba(51,51,51,.2);
+    transition: .3s ease-out;
+}
+.morebtn:hover {
+    background-color: #333;
+}
+.morebtn span{
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    width: 100%;
+    height: 100%;
+    color: #333;
+    font-weight: 500;
+}
+.morebtn:hover span{
+    color: #fffef2;
+}
+.morebtn span i {
+    font-size: 1.2rem;
+    padding-left: 15px;
+    color: #333;
+}
+.morebtn:hover span i {
+    font-size: 1.2rem;
+    padding-left: 15px;
+    color: #fffef2;
+}
+
+
+
+/********* section3 *********/
+#gocat {
+    /* 최상위박스 */
+    position: relative;
+    width: 100%;
+    background-color: #000;
+}
+#gocat ul {
+    display: flex;
+    flex-direction: row;
+}
+#gocat ul li {
+    /* 각 텍스트영역의 부모역할 */
+    position: relative;
+    flex: 1;
+}
+#gocat ul li img {
+    width: 100%;
+}
+/* #gocat ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+} */
+#gocat ul li:hover img {
+    opacity: .5;
+    transition: .4s ease;
+}
+.gocattit {
+    position: absolute;
+    display: block;
+    top: 100%;
+    width: 100%;
+    height: 500px;
+    transform: translateY(-100%);
+    
+    margin: 0 auto;
+    color: #fffef2;
+    text-align: center;
+}
+.gtwrap {
+    opacity: 0;
+}
+#gocat ul li:hover .gtwrap {
+    opacity: 1;
+    transition: .4s ease;
+}
+.gtwrap > h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+.gtwrap > h2::after {
+    content: '';
+    position: relative;
+    display: block;
+    top: -40px;
+    width: 30px;
+    border-top: 1px solid #ccc;
+    margin: 0 auto;
+}
+.gtwrap > h3 {
+    font-size: 3.5rem;
+    font-weight: 400;
+}
+
+/********* section4 *********/
+#bestbx {
+    /* 최상위 부모박스 */
+    position: relative;
+    width: 100%;
+    /* padding: 150px 0; */
+    background-color: #fffef2;
+}
+/* 감싸기박스 */
+.btxwrap {
+    display: flex;
+    width: 100%;
+    gap: 50px;
+}
+/* 이미지영역 */
+#goods {
+    /* 이미지박스 최상위부모 */
+    position: relative;
+    width: 100%;
+    /* margin-right: 5%; */
+    box-sizing: border-box;
+}
+.goods {
+    /* 플렉스박스 */
+    position: relative;
+    display: flex;
+}
+.btxwrap > .tit {
+    margin-top: 120px;
+}
+.listbx:hover {
+    transition: .4s ease;
+    background-color: #eeefe2;
+}
+.imgarea {
+    width: 60%;
+    margin: 100px auto 30px;
+}
+.imgarea img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.txtarea2 {
+    position: relative;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 2;
+    height: 130px;
+    color: #333;
+    border-bottom: 1px solid rgb(231, 231, 231);
+    width: 200px;
+    margin: 0 auto;
+}
+
+/********* section5 *********/
+.store {
+    /* 부모박스 */
+    position: relative;
+    height: 720px;
+}
+/* 텍스트박스 */
+.storetit {
+    position: absolute;
+    display: flex;
+    top: 100px;
+    left: 5%;
+    flex-direction: column;
+    gap: 20px;
+    width: 300px;
+    font-family: 'IBM Plex Sans KR', 'EB Garamond';
+    color: #fff;
+    text-shadow: 1px 1px 2px #33333350;
+}
+.storetit > h2 {
+    font-size: 3.5rem;
+    font-weight: 500;
+}
+.storetit > h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.storetit > p {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+.storetit > .morebtn {
+    width: 200px;
+    height: 40px;
+
+    margin-top: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+.storetit > .morebtn:hover {
+    background-color: #ffffff2c;
+    border: 1px solid #fff;
+}
+.storetit > .morebtn span{
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+.storetit > .morebtn i {
+    color: rgba(255, 255, 255, 0.7);
+}
+.storeimg {
+    height: 100%;
+}
+.store::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    background: linear-gradient(transparent,rgba(0, 0, 0, 0.5));
+}
+.storeimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* pip박스 */
+.pipbx {
+    position: absolute;
+    display: flex;
+    left: 5%;
+    bottom: 50px;
+    gap: 10px;
+    z-index: 10;
+}
+.pipbx > li:hover img {
+    opacity: .5;
+    transition: .4s ease;
+}
+.pipbx > li {
+    background-color: #000;
+}
+.pip {
+    position: relative;
+    width: 200px;
+    aspect-ratio: 16/9;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.274);
+    opacity: 1;
+    cursor: pointer;
+}
+.pip img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+    transition: .3s ease-out;
+}
+/* 클래스 on */
+.pip.on img {
+    opacity: .5;
+}
+.pip span {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    display: block;
+    font-size: 1.4rem;
+    color: #fff;
+    opacity: 0;
+    transition: .3s ease-out;
+}
+/* 클래스 on */
+.pip.on span {
+    opacity: 1;
+}
+
+/********* section6 *********/
+#post {
+    position: relative;
+    background-color: #fffef2;
+}
+/* 속박스 */
+.post {
+    padding: 5% 0;
+}
+/* 타이틀 */
+.post > .tit {
+    width: auto;
+    margin: auto;
+}
+.post > .tit h2 {
+    margin-left: 5%;
+}
+/* 공통박스  */
+.postbx {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 0 auto;
+    padding: 30px 5%;
+}
+.arti {
+    
+}
+/* 이미지영역 */
+.pimg {
+    display: block;
+    aspect-ratio: 1/1;
+    background-color: #000;
+}
+.pimg:hover img {
+    opacity: .5;
+    transition: .4s ease;
+}
+.pimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 1;
+}
+/* 텍스트영역 */
+.ptxt {
+    color: #333;
+}
+.ptxt h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.7;
+    margin-top: 10%;
+}
+.ptxt h3::after {
+    content: '';
+    display: block;
+    outline: 1px solid #eee;
+    margin: 3% 0;
+}
+.ptxt span {
+    display: block;
+    font-size: min(2.2vw,3rem);
+    line-height: 1.7;
+    font-weight: 400;
+    padding: 3% 0;
+}

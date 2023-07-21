@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesop</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <!-- 폰트어썸 외부 링크 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <!-- 공통 CSS -->
+    <link rel="stylesheet" href="./css/common.css">
+    <!-- 메인 CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- 스와이퍼 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    
+    <!-- 부드러운스크롤 -->
+    <script src="js/smoothScroll20.js"></script>
+    
+    <!-- 뷰JS 스탠드얼론 버전 가져오기! -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- 뷰JS vuex CDN -->
+    <script src="https://unpkg.com/vuex@3.0.0"></script>  
+
+    <!-- 스와이퍼 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- 제이쿼리 라이브러리 -->
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/jquery-ui.min.js"></script>
+    
+    <!-- 메인페이지 JS -->
+    <script src="./js/common.js" type="module"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/swiper2.js" type="module"></script>
+</head>
+<body>
+    <!-- 상단영역 -->
+    <header id="top">
+        <!-- 속박스 -->
+        <div class="top fxbx">
+            <!-- GNB -->
+            <nav>
+                <div class="gnb">
+                    <!-- 1. 로고영역 -->
+                    <div class="logo">
+                        <a href="./index.html"><img src="./images/logo.png" alt="이솝로고"></a>
+                    </div>
+                    <!-- 2. 카테고리영역 -->
+                    <category-comp></category-comp>
+                </div>
+                <ul class="side">
+                    <!-- 3. 사이드영역 -->
+                    <li><a href="#">로그인</a></li>
+                    <li><a href="#">위시리스트</a></li>
+                    <li><a href="#">카트</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- 메인영역 -->
+    <main id="cont">
+        <!-- 속박스 -->
+        <div class="cont">
+            <!-- 비디오 슬라이드 영역 -->
+            <section id="vidbx">
+                <!-- 슬라이드 -->
+                <ul class="vidslide">
+                    <li class="ban3">
+                        <video id="mainvid3" class="video" src="./images/vid_3.mp4" muted></video>
+                    </li>
+                    <li class="ban1">
+                        <video id="mainvid1" class="video" src="./images/vid_1.mp4" muted></video>
+                    </li>
+                    <li class="ban2">
+                        <video id="mainvid2" class="video" src="./images/vid_2.mp4" muted></video>
+                    </li>
+                </ul>
+                <!-- 블릿박스 -->
+                <ol class="indic">
+                    <li class="on">
+                        <span class="bld"></span>
+                    </li>
+                    <li>
+                        <span class="bld"></span>
+                    </li>
+                    <li>
+                        <span class="bld"></span>
+                    </li>
+                </ol>
+                <!-- 슬라이드 커버 -->
+                <div class="cover"></div>
+            </section>
+            <!-- 시그니처 상품 영역 -->
+            <section id="sigbx">
+                <!-- 속박스 -->
+                <div class="sigwrap">
+                    <!-- 텍스트영역 -->
+                    <div class="tit tit2">
+                        <h3>향수</h3>
+                        <h2>이솝의 퍼스널 향</h2>
+                        <p>전통에서 벗어난 매혹적이고 감각적인 이솝 프래그런스는 추억과 우리를 이어주는 다리이자 주변 사람들과의 연결점입니다.</p>
+                        <div class="morebtn">
+                            <a href="#">
+                                <span>
+                                    제품 모두 보기
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 슬라이드영역 -->
+                    <div class="ban">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="./images/goods/perfume/pd-3.webp" alt="시그니처향수">
+                                    <div class="txtarea">
+                                        <h5>글롬 오 드 퍼퓸</h5>
+                                        <p>플로럴, 스파이시, 그린</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/goods/perfume/pd-2.webp" alt="시그니처향수">
+                                    <div class="txtarea">
+                                        <h5>로즈 오 드 퍼퓸</h5>
+                                        <p>로즈, 시소, 과이악우드</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/goods/perfume/pd-5.webp" alt="시그니처향수">
+                                    <div class="txtarea">
+                                        <h5>카르스트 오 드 퍼퓸</h5>
+                                        <p>주니퍼, 쿠민, 샌달우드</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/goods/perfume/pd-6.webp" alt="시그니처향수">
+                                    <div class="txtarea">
+                                        <h5>테싯 오 드 퍼퓸</h5>
+                                        <p>유자, 베티버, 바질</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/goods/perfume/pd-7.webp" alt="시그니처향수">
+                                    <div class="txtarea">
+                                        <h5>에레미아 오 드 퍼퓸</h5>
+                                        <p>갈바눔, 아이리스, 유자</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/goods/perfume/pd-8.webp" alt="시그니처향수">
+                                    <div class="txtarea">
+                                        <h5>휠 오 드 퍼퓸</h5>
+                                        <p>사이프러스, 프랑킨센스, 베티버</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/goods/perfume/pd-11.webp" alt="시그니처향수">
+                                    <div class="txtarea">
+                                        <h5>마라케시 오 드 퍼퓸</h5>
+                                        <p>우디, 스파이시, 플로럴</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/goods/perfume/pd-12.webp" alt="시그니처향수">
+                                    <div class="txtarea">
+                                        <h5>이더시스 오 드 퍼퓸</h5>
+                                        <p>블랙 페퍼, 프랑킨센스, 샌달우드</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="./images/goods/perfume/pd-14.webp" alt="시그니처향수">
+                                    <div class="txtarea">
+                                        <h5>마라세티 오 드 퍼퓸</h5>
+                                        <p>라다넘, 암브레트, 스타이어랙스</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-scrollbar"></div>
+                          </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section3 카테고리 영역 -->
+            <section id="gocat">
+                <ul>
+                    <li>
+                        <a href="./sub.html?cat=perfume&%EC%A0%9C%ED%92%88%20%EB%AA%A8%EB%91%90%20%EB%B3%B4%EA%B8%B0">
+                            <img src="./images/cat_perfume.jpg" alt="카테고리1">
+                            <div class="gocattit">
+                                <div class="gtwrap">
+                                    <h2>인기 카테고리</h2>
+                                    <h3>향수</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./sub.html?cat=home&%EC%9D%B8%EC%84%BC%EC%8A%A4">
+                            <img src="./images/cat_home.jpg" alt="카테고리2">
+                            <div class="gocattit">
+                                <div class="gtwrap">
+                                    <h2>추천 카테고리</h2>
+                                    <h3>인센스 스틱</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./sub.html?cat=gift&%EC%8B%9C%EC%A6%88%EB%84%90%20%EA%B8%B0%ED%94%84%ED%8A%B8%20%ED%82%A4%ED%8A%B8">
+                            <img src="./images/cat_gift.jpg" alt="카테고리3">
+                            <div class="gocattit">
+                                <div class="gtwrap">
+                                    <h2>시즌 한정</h2>
+                                    <h3>시즈널 기프트 키트</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <!-- section4 베스트상품 영역 -->
+            <section id="bestbx">
+                <!-- 속박스 -->
+                <div class="btxwrap">
+                    <!-- 텍스트영역 -->
+                    <div class="tit">
+                        <h3>인기상품</h3>
+                        <h2>이달의 베스트 상품</h2>
+                        <p>전통에서 벗어난 매혹적이고 감각적인 이솝 프래그런스는 추억과 우리를 이어주는 다리이자 주변 사람들과의 연결점입니다.</p>
+                        <div class="morebtn">
+                            <a href="#">
+                                <span>
+                                    제품 모두 보기
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </span>
+                                
+                            </a>
+                        </div>
+                    </div>
+                    <!-- 상품영역 -->
+                    <div id="goods">
+                        <!-- 1열 -->
+                        <div class="goods">
+                            <div class="listbx">
+                                <div class="imgarea">
+                                    <img src="./images/goods/hand/pd-3.webp" alt="베스트상품">
+                                </div>
+                                <div class="txtarea2">
+                                    <h5>레버런스 아로마틱 핸드 워시</h5>
+                                    <p>우드, 흙내음, 스모키</p>
+                                </div>
+                            </div>
+                            <div class="listbx">
+                                <div class="imgarea">
+                                    <img src="./images/goods/hand/pd-4.webp" alt="베스트상품">
+                                </div>
+                                <div class="txtarea2">
+                                    <h5>레저렉션 아로마틱 핸드워시</h5>
+                                    <p>시트러스, 우드, 허브</p>
+                                </div>
+                            </div>
+                            <div class="listbx">
+                                <div class="imgarea">
+                                    <img src="./images/goods/hand/pd-3.webp" alt="베스트상품">
+                                </div>
+                                <div class="txtarea2">
+                                    <h5>로즈 앙상블</h5>
+                                    <p>핸드 및 바디 케어 인기제품 3종</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 2열 -->
+                        <div class="goods">
+                            <div class="listbx">
+                                <div class="imgarea">
+                                    <img src="./images/goods/hand/pd-1.webp" alt="베스트상품">
+                                </div>
+                                <div class="txtarea2">
+                                    <h5>레버런스 아로마틱 핸드 밤</h5>
+                                    <p>우드, 흙내음, 스모키</p>
+                                </div>
+                            </div>
+                            <div class="listbx">
+                                <div class="imgarea">
+                                    <img src="./images/goods/hand/pd-2.webp" alt="베스트상품">
+                                </div>
+                                <div class="txtarea2">
+                                    <h5>레저렉션 아로마틱 핸드 밤</h5>
+                                    <p>시트러스, 우드, 허브</p>
+                                </div>
+                            </div>
+                            <div class="listbx">
+                                <div class="imgarea">
+                                    <img src="./images/goods/hand/pd-17.webp" alt="베스트상품">
+                                </div>
+                                <div class="txtarea2">
+                                    <h5>제라늄 리프 바디 밤</h5>
+                                    <p>그린, 시트러스, 상쾌함</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- section5 스토어 영역 -->
+            <section id="store">
+                <div class="store">
+                    <div class="storetit">
+                        <h3>매장 찾기</h3>
+                        <h2>스토어 로케이터</h2>
+                        <p>매장에서는 이솝 컨설턴트가 고객 여러분을 따뜻하게 맞이하고 기프트 구매를 위한 맞춤형 컨설팅을 제공해드립니다.</p>
+                        <div class="morebtn">
+                            <a href="#">
+                                <span>가까운 스토어 찾기<i class="fa-solid fa-arrow-right"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <ol class="pipbx">
+                        <!-- 팝업 이미지박스 -->
+                        <li class="pip on">
+                            <img src="./images/store_busan.jpg" alt="부산스토어">
+                            <span><i class="fa-solid fa-location-dot"></i> Busan</span>
+                        </li>
+                        <li class="pip">
+                            <img src="./images/store_hannam.jpg" alt="한남스토어">
+                            <span><i class="fa-solid fa-location-dot"></i> Hannam</span>
+                        </li>
+                        <li class="pip">
+                            <img src="./images/store_seongsu.jpg" alt="성수스토어">
+                            <span><i class="fa-solid fa-location-dot"></i> Seongsu</span>
+                        </li>
+                    </ol>
+                    <!-- 배경 이미지박스 -->
+                    <div class="storeimg"><img src="./images/store_busan.jpg" alt="스토어"></div>
+                </div>
+            </section>
+            <!-- section6 포스트 영역 -->
+            <section id="post">
+                <div class="post">
+                    <!-- 타이틀 -->
+                    <div class="tit">
+                        <h2>Post</h2>
+                    </div>
+                    <!-- 포스트박스 -->
+                    <div class="postbx">
+                        <article class="arti">
+                            <!-- 이미지영역 -->
+                            <div class="pimg">
+                                <a href="#"><img src="./images/post_3.jpg" alt="칼럼"></a>
+                            </div>
+                            <!-- 텍스트영역 -->
+                            <blockquote class="ptxt">
+                                <h3>Lessons from the lab</h3>
+                                <span>향수 가이드</span>
+                            </blockquote>
+                        </article>
+                        <article class="arti">
+                            <!-- 이미지영역 -->
+                            <div class="pimg">
+                                <a href="#"><img src="./images/post_4.jpg" alt="칼럼"></a>
+                            </div>
+                            <!-- 텍스트영역 -->
+                            <blockquote class="ptxt">
+                                <h3>Lessons from the lab</h3>
+                                <span>스킨 케어 루틴을 관리하는 방법</span>
+                            </blockquote>
+                        </article>
+                        <article class="arti">
+                            <!-- 이미지영역 -->
+                            <div class="pimg">
+                                <a href="#"><img src="./images/post_2.jpg" alt="칼럼"></a>
+                            </div>
+                            <!-- 텍스트영역 -->
+                            <blockquote class="ptxt">
+                                <h3>essay</h3>
+                                <span>존재의 울림: 이더시스 오 드 퍼퓸</span>
+                            </blockquote>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- 하단영역 -->
+    <footer id="info">
+        <!-- 속박스 -->
+        <div class="info">
+            <!-- 모바일용 푸터 -->
+            <section id="mob">
+            </section>
+
+            <!-- pc용 푸터 -->
+            <section id="dt">
+                <div class="cs_center">
+                    <span class="title">고객센터</span>
+                    <a href="tel:123-4567" class="cs_number">123:4567</a>
+                    <span class="cs_time">월-금 / 10-17시 (점심시간 13-14)</span>
+                </div>
+                <div class="sitemap">
+                    <dl class="depth">
+                        <dt class="title">주문 및 문의</dt>
+                        <dd class="list">
+                            <a href="#">문의하기</a>
+                            <a href="#">자주 묻는 질문</a>
+                            <a href="#">배송</a>
+                            <a href="#">반품</a>
+                            <a href="#">배송 조회하기</a>
+                            <a href="#">주문 내역</a>
+                        </dd>
+                    </dl>
+                    <dl class="depth">
+                        <dt class="title">소셜미디어</dt>
+                        <dd class="list">
+                            <a href="#">Instagram</a>
+                            <a href="#">Twitter</a>
+                            <a href="#">LinkedIn</a>
+                            <a href="#">Kakao Plus Friend</a>
+                        </dd>
+                    </dl>
+                    <dl class="depth">
+                        <dt class="title">소개</dt>
+                        <dd class="list">
+                            <a href="#">브랜드 스토리</a>
+                            <a href="#">이솝 재단</a>
+                            <a href="#">채용</a>
+                            <a href="#">개인정보처리방침</a>
+                        </dd>
+                    </dl>
+                    <dl class="depth">
+                        <dt class="title">서비스</dt>
+                        <dd class="list">
+                            <a href="#">기업체 구매</a>
+                            <a href="#">페이셜 어포인트먼트</a>
+                            <a href="#">1:1 채팅 상담</a>
+                            <a href="#">린스 앤 리턴 캠페인</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="company">
+                    <h2>© Aesop</h2>
+                    <address class="address">
+                        서울특별시 강남구 도산대로45길 10-6 이솝코리아 | 대표자: 프레데리크미셸어완세일러 | 대표전화: 1800-1987 | 대표 이메일: aesop@aesop.com | 
+                    </address>
+                    <span class="company_number">사업자 등록 번호: 220-88-56014 | </span>
+                    <span class="company_infomem">통신판매업 신고번호: 2014-서울강남-02300</span>
+                    <p id="copyright">
+                        © 2023 Aesop All rights reserved. In God we trust.
+                    </p>
+                </div>
+            </section>
+            
+        </div>
+    </footer>
+</body>
+</html>

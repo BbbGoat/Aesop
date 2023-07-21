@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+/* 웹&앱PJ 공통클래스/웹폰트 CSS - core.css */
+/* 웹폰트, 공용클래스 */
+
+/******************** 1. 웹폰트 : CDN ********************/
+
+/* Noto sans kr */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+/* IBM Plex Sans KR */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;700&display=swap');
+
+/* EB Garamond */
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&display=swap');
+/* Cormorant Garamond */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+/* Newsreader */
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@300;400;500;600;700&display=swap');
+
+/* 
+    // 한글
+    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+
+    // 영문
+    font-family: 'EB Garamond', serif;
+    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Newsreader', serif;
+*/
+
+/* 전체 글자크기 Root 셋팅! */
+html{
+    font-size: 10px;
+    /* 글자 rem단위 계산편의때문~! */
+}
+/* 공사중 표시 */
+body * {
+    font-family: 'IBM Plex Sans KR';
+    /* outline: 1px dashed #ccc; */
+}
+
+/* 
+  [ 공통 클래스 이름정의 ]
+  1. ibx - inside box 속박스
+  2. pt1, pt2 - part1, part2 각 부분박스(비율적용)
+  3. cbx - content box 내용박스
+  4. bgi - background image 관련 속성
+*/
+
+/******************** 2. 공통 클래스 ********************/
+
+/* 속박스 class */
+.ibx{
+    max-width: 1200px;
+    /* 최대가로크기 1100px이면
+    싸고 있는 박스가 이것보다 작아질 경우
+    auto로 자동전환되어 가로스크롤이 안생김! */
+    margin: 0 auto;
+}
+
+/* 스크롤바 디자인 클래스 */
+/* -webkit- 밴더사명(크롬,사파리) 접두어 
+( 참고: -ms-(ie), -o-(오페라), -moz-(파이어폭스) */
+.scbar::-webkit-scrollbar{
+    /* 전체 스크롤바 크기변경 */
+    width: 8px;
+}
+.scbar::-webkit-scrollbar-thumb{
+    /* 스크롤바 */
+    background-color: #6b6b6b;
+    border-radius: 5px;
+}
+.scbar::-webkit-scrollbar-track{
+    /* 스크롤바 트랙 */
+    background-color: #e9e9e9;
+    border-radius: 5px;
+}
+
+/* float 셋팅 클래스 */
+.clb > li{
+    float: left;
+}
+/* float설정 지우기 클래스 */
+.clb::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/* IR클래스 */
+/* 배경이미지 설명클래스 (Image Replacement) */
+.ir{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}

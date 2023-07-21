@@ -1,0 +1,385 @@
+@charset "utf-8";
+
+/* 웹&앱PJ 서브페이지 CSS - sub.css */
+
+
+
+/*************** 메인영역 ***************/
+.container {
+    position: relative;
+    background-color: #f6f5e8;
+}
+.pagewrap {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    /* padding: 20px; */
+    padding: 0 10px 0 30px;
+}
+.product_top {
+    margin-top: 140px;
+    position: relative;
+}
+.cate_main_title {
+    vertical-align: baseline;
+    text-align: left;
+    margin-left: 50px;
+    line-height: 1.7;
+    color: #333
+}
+.cate_main_title h3 {
+    font-weight: 500;
+    font-size: 3rem;
+    /* margin-top: 40px; */
+}
+.cate_main_title p {
+    width: 500px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin: 20px 0 40px;
+    color: #333;
+}
+
+/* 스티키박스 */
+.clearfix {
+    display: block;
+}
+.clearfix::after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ' ';
+    clear: both;
+    height: 0;
+}
+/* 왼쪽박스 */
+.pageL {
+    box-sizing: border-box;
+    float: left;
+    width: 35%;
+    padding: 20px 20px 0 0;
+}
+.stkbx {
+    height: 560px;
+}
+.stkbx::before {
+    content: '';
+    display: table;
+    clear: both;
+}
+.stkbx::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.stkimg {
+    /* js로 변경할 부분 */
+    /* position: fixed; */
+    /* width: 630px; */
+    /* top: 90px; */
+    /* 위에까지 */
+    height: calc(100vh - 120px);
+}
+.stkimg img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.stktxt {
+    position: absolute;
+    /* 탑값은 js에서 조정해야함!! */
+    /* top: 40px; */
+    left: 50px;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(102, 102, 102, 0.5);
+    transition: .4s ease 0;
+    opacity: 0;
+}
+.stktxt > h4 {
+    font-size: 3rem;
+    line-height: 1.8;
+}
+.stktxt > span {
+    font-size: 1.8rem;
+}
+
+/* 오른쪽박스 */
+.pageR {
+    position: relative;
+    float: right;
+    width: 65%;
+    overflow: visible;
+}
+.inner {
+    position: relative;
+    padding: 0;
+}
+.menuarea {
+    position: relative;
+}
+.menu_wrap {
+    display: block;
+    position: absolute;
+    bottom: 43px;
+    top: initial;
+    left: 0;
+    padding: 0 0 0 20px;
+    text-align: left;
+    overflow-x: initial;
+    white-space: normal;
+}
+.menu_wrap > h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 4;
+    color: #333;
+}
+.menu {
+    list-style: none;
+
+    list-style: none;
+    font-size: 1.5rem;
+    display: flex;
+    gap: 20px
+    ;
+}
+.menu > dd + dd::before {
+    content: '';
+    display: inline-block;
+    height: 10px;
+    border-left: 1px solid #ccc;
+    margin-right: 20px;
+}
+.menu > dt {
+    display: none;
+}
+.menu > dd {
+    display: inline-block;
+}
+.menu > dd a {
+    color: #333;
+}
+.menu > dd.on {
+    font-weight: 600;
+    
+}
+
+/* 상품영역 */
+.product_wrap {
+    height: auto;
+    min-height: 40vh;
+}
+
+.prdList  {
+    position: relative;
+    padding: 0;
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+.gridbox {
+    float: left;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 33.333333333333333%;
+    transition: .3s ease;
+}
+.gridbox:hover {
+    /* background-color: #f0efe1; */
+}
+.gridbox > a {
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.prd_thumb {
+    position: relative;
+    width: 100%;
+    margin-bottom: 8px;
+    text-align: center;
+}
+.prdImg {
+    position: relative;
+    margin: 0;
+    background-color: #f0efe1;
+    aspect-ratio: 1/1;
+}
+.prdImg img {
+    position: relative;
+    display: block;
+    width: 65%;
+    transform: translateY(-50%);
+    top: 50%;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+
+/* 설명영역 */
+.description {
+    position: relative;
+    width: 100%;
+    height: 270px;
+    bottom: 0px;
+    left: 0px;
+    text-align: center;
+    overflow: hidden;   
+}
+.description span {
+    position: relative;
+    /* margin: 0 auto; */
+    padding: 0;
+    line-height: 1.4em;
+    text-align: left;
+    display: block;
+    letter-spacing: -0.01em;
+
+    font-size: 1.5rem;
+    color: #000000;
+}
+.description p {
+    position: relative;
+    /* margin: 0 auto; */
+    padding: 0;
+    line-height: 1.4em;
+    text-align: left;
+    display: block;
+    letter-spacing: -0.01em;
+
+    font-size: 1.5rem;
+    color: #000000;
+}
+.pdInfo {
+    width: 100%;
+    height: 80px;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-top: 20px;
+}
+.pdInfo-name {
+    /* font-family: Suisse Medium,sans-serif; */
+    color: #252525;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.pdInfo-info {
+    color: #666;
+    display: flex;
+    display: -ms-flexbox;
+    -ms-flex-pack: center;
+    justify-content: center;
+    transition: opacity .3s cubic-bezier(.215,.61,.355,1);
+}
+.pdInfo-info span {
+    font-size: 1.4rem;
+    color: #666;
+}
+.pdInfo-info .separator {
+    font-size: 1.4rem;
+    color: rgba(51,51,51,.2);
+    display: inline-block;
+    margin: 0 5px;
+}
+.pdDetail {
+    font-size: 1.4rem;
+    width: 100%;
+}
+.pdDetail-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-top: 2px solid #252525;
+}
+.pdDetail-listItem {
+    display: flex;
+    width: 100%;
+    text-align: left;
+    padding: 20px 0;
+}
+.pdDetail-title {
+    margin: 0 20px 0 0;
+    flex-shrink: 0;
+    color: #333;
+    font-weight: 500;
+}
+.pdDetail-content {
+    color: #666;
+}
+.pdDetail-list li {
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+/* 구매 버튼영역 */
+.btn_wrap {
+    position: relative;
+}
+.btn {
+    position: relative;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    display: block;
+    
+    height: 55px;
+    line-height: 55px;
+    font-size: 17px;
+    font-weight: 500;
+}
+.btn.fill {
+    background: #ebeade;
+    border: #e7e6e4;
+    color: #8b8b8b;
+    padding: 0 30px;
+    font-size: 1.4rem;
+    font-weight: normal;
+    transition: background-color 0.3s
+}
+.gridbox:hover .fill {
+    background-color: #252525;
+    color: #fffef2;
+}
+
+.prdList::after {
+    content: '';
+    display: block;
+    height: 10px;
+    width: 100%;
+    padding-bottom: 20px;
+    float: left;
+}
+
+.pdDetail-content {
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+/* 인디케이터 */
+/* .paginate {
+    float: left;
+    width: 100%;
+    height: 50px;
+    background-color: #8b8b8b;
+    padding-bottom: 20px;
+}
+.paginate span {
+    display: block;
+    width: 100%;
+    font-size: 1.4rem;
+    text-align: center;
+} */
+
+
+.fa-solid {
+    margin: 5px;
+    font-size: 14px;
+}
