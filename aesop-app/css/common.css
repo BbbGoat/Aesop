@@ -1,0 +1,354 @@
+@charset "utf-8";
+
+/* 웹&앱PJ 공통모듈 CSS - common.css */
+
+/* 초기화 */
+@import url(./core.css);
+@import url(./reset.css);
+
+/*************** 상단영역 ***************/
+/* header {
+    height: 80px;
+} */
+
+
+/* 네비게이션 전체박스 */
+.fxbx {
+    /* 픽스드박스 */
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+}
+nav {
+    /* 플렉스박스 */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    white-space: nowrap;
+    padding: 0 30px;
+    font-size: 1.5rem;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    height: 80px;
+    background-color: #252525;
+
+    transition: .3s ease;
+    overflow: hidden;
+}
+nav.scl {
+    height: 60px;
+    background-color: #fffef2;
+    transition: .4s ease-out;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+
+/* 클래스 on */
+.top.on nav {
+    /* 플렉스박스 */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    white-space: nowrap;
+    padding: 0 30px;
+    font-size: 1.5rem;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    height: 420px;
+
+    border-bottom: 1px solid #ccc;
+    background: #fffef2;
+    transition: .3s ease-out;
+    overflow: hidden;
+}
+.top.on nav::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    transition: .4s ease-out;
+}
+.top.on nav.scl::after {
+    top: 60px;
+}
+.top::after {
+    position: absolute;
+    content: '';
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    opacity: .0;
+    background-color: #000;
+}
+.top.on::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    opacity: .3;
+    background-color: #000;
+}
+
+/* 로고/카테고리 플렉스박스 */
+.gnb {
+    display: flex;
+}
+/* 1. 로고영역 */
+.logo {
+    filter: brightness(50);
+    height: 80px;
+    transition: .4s ease-out;
+}
+.top.on .logo {
+    filter: brightness(0);
+}
+nav.scl .logo {
+    filter: brightness(0);
+    height: 60px;
+}
+.logo img {
+    height: 100%;
+}
+/* 2. 카테고리영역 */
+/* gnb 대분류 */
+.catbx {
+    position: relative;
+    display: flex;
+    gap: 70px;
+    margin-left: 80px;
+    line-height: 80px;
+    transition: .4s ease;
+}
+nav.scl .catbx{
+    line-height: 60px;
+}
+.catbx > li > a {
+    display: block;
+    color: #fff;
+}
+nav.scl .catbx > li > a {
+    color: #333;
+}
+.catbx > li > a::before {
+    content: '';
+    position: relative;
+    display: block;
+    top: 79px;
+    width: 0%;
+    border-bottom: 1px solid #333;
+    transition: .4s ease-out;
+}
+.catbx > li.on > a::before {
+    width: 100%;
+}
+nav.scl .catbx > li > a::before {
+    /* top: 45px; */
+    top: 59px;
+}
+.top.on .catbx > li > a {
+    font-weight: 500;
+    color: #333;
+}
+/* gnb 소분류 */
+.subbx {
+    position: absolute;
+    top: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    transition: .4s ease-out;
+}
+/* nav.scl .subbx {
+    top: 80px;
+} */
+/* 소분류 공통박스 */
+.sub {
+    font-weight: 400;
+    line-height: 1.7;
+    font-size: 1.5rem;
+}
+.sub dt.all {
+    pointer-events: auto;
+}
+.sub > dt {
+    pointer-events: none;
+    margin: 10px 0;
+}
+.sub > dd + dd {
+    margin-top: 5px;
+}
+.sub > dt a {
+    display: inline-block;
+    color: #505050;
+    font-weight: 600;
+    /* display: block; */
+}
+.sub > dt a::after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid #ccc;
+    width: 0;
+    transition: .3s ease;
+}
+.sub > dt a:hover::after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+
+.sub > dd a {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #333;
+}
+.sub > dd a::after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid #ccc;
+    width: 0;
+    transition: .3s ease;
+}
+.sub > dd a:hover::after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+
+/* 3. 사이드영역 */
+.side {
+    display: flex;    
+    gap: 30px;
+    line-height: 80px;
+    transition: .4s ease-out;
+}
+nav.scl .side {
+    line-height: 60px;
+}
+.side > li a {
+    color: #fff;
+}
+nav.scl .side > li a {
+    color: #333;
+}
+.top.on .side > li a {
+    color: #333;
+}
+/* 4. 썸네일영역 */
+.thumb {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 300px;
+}
+.thumb img {
+    width: 100%;
+    aspect-ratio: 1.6/1;
+    object-fit: cover;
+}
+.thumb h5 {
+    font-weight: 400;
+    font-size: 1.8rem;;
+    margin-top: 10px;
+    line-height: 2;
+    color: #333;
+}
+.thumb span {
+    width: 100%;
+    white-space: pre-wrap;
+    line-height: 1.7;
+    font-size: 1.4rem;
+    color: #333;
+}
+
+
+/*************** 하단영역 ***************/
+
+/* 푸터 공통 셋팅 */
+footer .info {
+    position: relative;
+    background-color: #252525;
+    border-top: 1px solid #e3e3e3;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+/******* PC 푸터 *******/
+
+#dt {
+    position: relative;
+    padding: 50px 100px 80px;
+}
+/* 고객센터 */
+.cs_center {
+    display: flex;
+    flex-direction: column;
+    /* color: #fff; */
+}
+.cs_center .title {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #fffef2;
+    line-height: 34px;
+    float: none;
+}
+.cs_number {
+    display: block;
+    font-size: 3rem;
+    color: #fffef2;
+    line-height: 42px;
+    text-decoration: none;
+}
+
+/* 사이트맵 */
+.sitemap {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    top: 50px;
+    right: 100px;
+    gap: 70px;
+}
+dt.title {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 50px;
+    color: #fffef2;
+}
+dd.list {
+    display: flex;
+    flex-direction: column;
+    line-height: 26px;
+    font-size: 1.5rem;
+}
+dd.list > a {
+    color: #ddd;
+}
+
+/* 저작권고지 */
+.company {
+    border-top: solid 1px #b3b0a948;
+    margin-top: 200px;
+    padding: 22px 0;
+    font-size: 12px;
+    line-height: 20px;
+    word-break: keep-all;
+}
+address {
+    display: inline-block;
+    text-decoration: none;
+    font-style: normal;
+}
+
+
+
+
+
+
+
+/******* 모바일용 푸터 *******/
+
