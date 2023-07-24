@@ -280,10 +280,10 @@ Vue.component("goods-comp",{
     methods: {
         // 카트 추가 메서드
         addCart(data) {
-            console.log("해당제품 카트에 추가 시키기:", data, skinData[data]);
+            console.log("해당제품 카트에 추가 시키기:", data, skinData[data], skinData[data].prdImg, skinData[data].pdInfo.name, skinData[data].pdInfo.price);
 
             // 뱉어내기
-            return skinData[data]
+            return skinData[data];
         },
         // 정규식함수(숫자 세자리마다 콤마해주는 기능)
         numberWithCommas(x) {
@@ -416,6 +416,7 @@ Vue.component("goods-comp",{
         }
     }
 }); /////////////////// Vue 컴포넌트 ////////////////////////
+
 
 
 // [2] 뷰컴포넌트 - 푸터
