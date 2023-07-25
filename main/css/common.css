@@ -31,6 +31,9 @@ nav {
     height: 80px;
     background-color: #252525;
 
+    position: relative;
+    z-index: 999;
+
     transition: .3s ease;
     overflow: hidden;
 }
@@ -284,16 +287,22 @@ nav.scl .side > li a {
 }
 .cart_bx {
     overflow-y: auto;
-    /* height: 800px; */
     margin-top: 80px;
+    transition: .3s ease-out;
+    border-bottom: 1px solid #ccc;
 }
+.pdtop {
+    margin-top: 60px;
+    transition: .4s ease-out;
+}
+
 
 /* 리스트 박스 */
 .cart_wrap .list_box {
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 100px;
+    height: 120px;
     border-bottom: 1px solid #ccc;
 }
 .cart_wrap .left {
@@ -311,6 +320,17 @@ nav.scl .side > li a {
     font-size: 15px;
     font-weight: normal;
 }
+.cart_wrap .right h3 {
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    /* height: 45px; */
+    overflow: hidden;
+}
+.cart_wrap .right span {
+    font-size: 12px;
+}
 .btn_bx {
     position: relative;
     right: 0;
@@ -318,6 +338,7 @@ nav.scl .side > li a {
     width: 100%;
     background-color: #252525;
     color: #fffef2;
+    outline: 1px solid #252525;
 }
 .buy_btn {
     position: relative;
@@ -330,7 +351,6 @@ nav.scl .side > li a {
     font-size: 17px;
     font-weight: 500;
 }
-
 
 /*************** 하단영역 ***************/
 

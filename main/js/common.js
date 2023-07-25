@@ -300,31 +300,42 @@ Vue.component("goods-comp",{
     methods: {
         // 카트 추가 메서드
         addCart(prdData) {
-            console.log("해당제품 카트에 추가 시키기:", prdData, prdData.prdImg, prdData.pdInfo.name, prdData.pdInfo.price);
-            let num = "1";
+            // console.log("해당제품 카트에 추가 시키기:", prdData, prdData.prdImg, prdData.pdInfo.name, prdData.pdInfo.price);
+            let num = "1"; // 기본수량
             let arr = [
                 prdData.prdImg,
                 prdData.pdInfo.name,
                 prdData.pdInfo.price,
                 num,
             ];
+            let getItem = localStorage.getItem("cart");
 
-            console.log(arr);
+            // 중복데이터 선별 변수 (true/false)
+            let isB = getItem.includes(arr[1]);
 
-            // 스토리지 업데이트
-            cartData.push(arr);
-            localStorage.setItem("cart",JSON.stringify(cartData));
+            if (isB == true) {
+                console.log("중복")
+                alert ("이미 장바구니에 담겨있습니다.")
+                return;
+            }
+            else if (isB == false) {
+                console.log("추가")
+    
+                // 배열 추가
+                cartData.push(arr);
+                
+                // 로컬스토리지 업데이트
+                localStorage.setItem("cart",JSON.stringify(cartData));
+    
+                // state 업데이트
+                store.state.cart = cartData;
+    
+                // 전체개수
+                // console.log(cartData.length);
+            }
 
-            // 전체개수
-            console.log(cartData.length);
-
-            // state 업데이트
-            store.state.cart = cartData;
-            console.log("state 업데이트 :", store.state.cart);
 
 
-            // 뱉어내기
-            // return skinData[data];
         },
         // 디테일페이지 카트 추가 메서드
         dtCart(prdData) {
@@ -490,10 +501,10 @@ Vue.component("cart-comp",{
                     </div>
                     <div class="right">
                         <h3>{{v[1]}}</h3>
-                        <p>{{v[2]}}</p>
-                        <p>{{v[3]}}</p>
+                        <p>{{numberWithCommas(v[2])}}</p>
+                        <span>수량 : {{(v[3])}}</span>
                     </div>
-                    <button>×</button>
+                    <button class="del_cart" v-on:click="delCart(i)">×</button>
                 </div>
             </div>
             <div class="btn_bx">
@@ -503,13 +514,23 @@ Vue.component("cart-comp",{
     </div>
     `,
     data() {
-        return{
-            // for문 돌릴 카트데이터 변수 담아주기
-            // cartData : [ cartData ],
-            // cartData : [ store.state.cart ],
-        }
+        return {}
     },
-    methods: {},
+    methods: {
+        delCart(tgNum) {
+            console.log("삭제!",tgNum);
+
+            // 스토리지 업데이트
+            cartData.splice(tgNum,1);
+            localStorage.setItem("cart",JSON.stringify(cartData));
+
+            // state 업데이트
+            store.state.cart = cartData;
+        },
+        numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        },
+    },
 });
 
 
@@ -562,10 +583,12 @@ new Vue({
 
             if (scStart > 0) {
                 $("nav").addClass("scl");
+                $(".cart_bx").addClass("pdtop");
             }
             else if (scStart <= 0) {
                 // console.log("원상태");
                 $("nav").removeClass("scl");
+                $(".cart_bx").removeClass("pdtop");
             }
         }); /////// scroll 이벤트 ///////
 

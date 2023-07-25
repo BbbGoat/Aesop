@@ -110,7 +110,7 @@ const skinData = {
         cat: "hand",
         prdImg: "./images/goods/hand/pd-8.webp",
         pdInfo: {
-            name: "로즈 앙상블",
+            name: "로즈 바디케어 듀엣",
             info: "150ml",
             price: "264000",
         },
