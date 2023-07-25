@@ -11,6 +11,23 @@ import giftData from "./gdsData/giftData.js";
 // 디테일 더미 데이터
 import dtimgData from "./gdsData/detailImg.js";
 
+
+
+/************* 로컬스토리지 카트 셋팅 *************/
+// 카트 배열 데이터
+let cartData = [];
+
+// 카트 배열 새로고침 초기화 방지
+const saveCart = localStorage.getItem("cart");
+if (saveCart) {
+    const parseCart = JSON.parse(saveCart);
+    store.state.cart = parseCart;
+    cartData = parseCart;
+}
+//////////////////////////////////////////////////
+
+
+
 /***************************************************** 
     뷰 컴포넌트로 데이터 셋업하기
 *****************************************************/
@@ -266,22 +283,7 @@ Vue.component("goods-comp",{
                 </div>
             </div>
         </div>
-
-        <!--여기부터 Cart 컴포넌트-->
-        <div class="cart_comp">
-            <div class="cart_wrap">
-
-                <div class="left">
-                    <img src="" />
-                </div>
-                <div class="right">
-                    <h3>상품명</h3>
-                    <h3>가격</h3>
-                    <h3>수량</h3>
-                </div>
-
-            </div>
-        </div>
+        
     </section>
     `,
     data() {
@@ -299,9 +301,26 @@ Vue.component("goods-comp",{
         // 카트 추가 메서드
         addCart(prdData) {
             console.log("해당제품 카트에 추가 시키기:", prdData, prdData.prdImg, prdData.pdInfo.name, prdData.pdInfo.price);
-            
+            let num = "1";
+            let arr = [
+                prdData.prdImg,
+                prdData.pdInfo.name,
+                prdData.pdInfo.price,
+                num,
+            ];
 
-            // store.state 업데이트
+            console.log(arr);
+
+            // 스토리지 업데이트
+            cartData.push(arr);
+            localStorage.setItem("cart",JSON.stringify(cartData));
+
+            // 전체개수
+            console.log(cartData.length);
+
+            // state 업데이트
+            store.state.cart = cartData;
+            console.log("state 업데이트 :", store.state.cart);
 
 
             // 뱉어내기
@@ -457,6 +476,42 @@ Vue.component("detail-comp",{
     template: detailData.detailarea,
 }); //////////////////// Vue 컴포넌트 ///////////////////////
 
+Vue.component("cart-comp",{
+    template: `   
+    <!--여기부터 Cart 컴포넌트-->
+    <div class="cart_comp">
+        <div class="cart_wrap">
+
+            <div class="cart_bx">
+
+                <div class="list_box" v-for="(v,i) in $store.state.cart" :key="i">
+                    <div class="left">
+                        <img v-bind:src="v[0]" />
+                    </div>
+                    <div class="right">
+                        <h3>{{v[1]}}</h3>
+                        <p>{{v[2]}}</p>
+                        <p>{{v[3]}}</p>
+                    </div>
+                    <button>×</button>
+                </div>
+            </div>
+            <div class="btn_bx">
+                <div class="buy_btn">BUY</div>
+            </div>
+        </div>
+    </div>
+    `,
+    data() {
+        return{
+            // for문 돌릴 카트데이터 변수 담아주기
+            // cartData : [ cartData ],
+            // cartData : [ store.state.cart ],
+        }
+    },
+    methods: {},
+});
+
 
 
 
@@ -480,7 +535,7 @@ new Vue({
     mounted() {
 
         // 부드러운 스크롤 JS 호출!
-        startSS();
+        // startSS();
 
         // 클릭시 li에 클래스 on
         $(".catbx li > a").click(function(e){

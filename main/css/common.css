@@ -265,6 +265,73 @@ nav.scl .side > li a {
 }
 
 
+/***************** 카트 영역 *****************/
+
+.cart_comp {
+
+}
+.cart_wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: #fffef2;
+    border-left: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.cart_bx {
+    overflow-y: auto;
+    /* height: 800px; */
+    margin-top: 80px;
+}
+
+/* 리스트 박스 */
+.cart_wrap .list_box {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100px;
+    border-bottom: 1px solid #ccc;
+}
+.cart_wrap .left {
+    width: 50%;
+    padding: 10px;
+}
+.cart_wrap .left img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.cart_wrap .right {
+    width: 50%;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: normal;
+}
+.btn_bx {
+    position: relative;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #252525;
+    color: #fffef2;
+}
+.buy_btn {
+    position: relative;
+    cursor: pointer;
+    /* margin-top: 20px; */
+    text-align: center;
+    display: block;
+    height: 55px;
+    line-height: 55px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+
 /*************** 하단영역 ***************/
 
 /* 푸터 공통 셋팅 */

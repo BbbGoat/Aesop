@@ -107,6 +107,7 @@ export default new Vuex.Store({
         result: 1,
 
         // cart state
+        cart: [],
         cartimg: '',
         cartnm: '',
         cartprice: '',
