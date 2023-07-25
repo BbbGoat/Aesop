@@ -165,7 +165,9 @@ Vue.component("goods-comp",{
                                                     </ul>
                                                 </div>
                                             </div>
-                                        <div class="btn_wrap" v-on:click="addCart(prdData[dataNum()][i].data)">
+                                        <div class="btn_wrap" 
+                                            v-on:click="addCart(
+                                                prdData[dataNum()][i])">
                                             <div class="btn fill">CART</div>
                                         </div>
                                     </div>
@@ -240,8 +242,8 @@ Vue.component("goods-comp",{
                                 </span>
                             </div>
                             <!-- 구매버튼 -->
-                            <div class="dtbtn crtbtn" v-on:click.prevent="">
-                                <a href="#"><span>CART</span></a>
+                            <div class="dtbtn crtbtn">
+                                <a href="#" v-on:click="dtCart()"><span>CART</span></a>
                                 <a href="#"><span>BUY</span></a>
                             </div>
                             <div class="dtbtn nPay" v-on:click.prevent="closeFn()">
@@ -264,6 +266,22 @@ Vue.component("goods-comp",{
                 </div>
             </div>
         </div>
+
+        <!--여기부터 Cart 컴포넌트-->
+        <div class="cart_comp">
+            <div class="cart_wrap">
+
+                <div class="left">
+                    <img src="" />
+                </div>
+                <div class="right">
+                    <h3>상품명</h3>
+                    <h3>가격</h3>
+                    <h3>수량</h3>
+                </div>
+
+            </div>
+        </div>
     </section>
     `,
     data() {
@@ -279,12 +297,27 @@ Vue.component("goods-comp",{
 
     methods: {
         // 카트 추가 메서드
-        addCart(data) {
-            console.log("해당제품 카트에 추가 시키기:", data, skinData[data], skinData[data].prdImg, skinData[data].pdInfo.name, skinData[data].pdInfo.price);
+        addCart(prdData) {
+            console.log("해당제품 카트에 추가 시키기:", prdData, prdData.prdImg, prdData.pdInfo.name, prdData.pdInfo.price);
+            
+
+            // store.state 업데이트
+
 
             // 뱉어내기
-            return skinData[data];
+            // return skinData[data];
         },
+        // 디테일페이지 카트 추가 메서드
+        dtCart(prdData) {
+            // 아이디어 : 서브페이지에서 이미지 클릭시 state에 필요한 해당 데이터 다 담아두고
+            // (addCart에서 이미 셋팅해둬서 데이터바인딩만 시켜주면 됨)
+            // 그리고 디테일에서 카트 클릭시 이 메서드로 바인딩된 데이터를 카트로 보내주면 됨
+
+            // !!!!! 이미 디테일 페이지 넘어갈때 만들어둔 store.state 셋팅이 있다!!! 재활용하면 됨!! 대박스
+            console.log("디테일에서 카트추가");
+            console.log("store state dtname : ", store.state.dtname);
+        },
+
         // 정규식함수(숫자 세자리마다 콤마해주는 기능)
         numberWithCommas(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

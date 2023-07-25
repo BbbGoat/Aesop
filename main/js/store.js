@@ -104,8 +104,12 @@ export default new Vuex.Store({
         dttit:"",
         dtcont:"",
 
-
         result: 1,
+
+        // cart state
+        cartimg: '',
+        cartnm: '',
+        cartprice: '',
 
 
     }, /////// state 구역 ////////
