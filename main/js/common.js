@@ -315,7 +315,7 @@ Vue.component("goods-comp",{
 
             if (isB == true) {
                 console.log("중복")
-                alert ("이미 장바구니에 담겨있습니다.")
+                alert ("이미 장바구니에 담겼습니다.")
                 return;
             }
             else if (isB == false) {
@@ -502,7 +502,12 @@ Vue.component("cart-comp",{
                     <div class="right">
                         <h3>{{v[1]}}</h3>
                         <p>{{numberWithCommas(v[2])}}</p>
-                        <span>수량 : {{(v[3])}}</span>
+                        <span class="cart__quantity">
+                            <a href="#" class="cart__qty-down"><span class="cart__minus">-</span></a>
+                            <input id="cart__quantity" name="cart__quantity_opt[]" value="1" type="text">
+                            <a href="#" class="cart__qty-up"><span class="cart__plus">+</span></a>
+                        </span>
+
                     </div>
                     <button class="del_cart" v-on:click="delCart(i)">×</button>
                 </div>
