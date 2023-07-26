@@ -271,8 +271,8 @@ Vue.component("goods-comp",{
                             </div>
                             <!-- 구매버튼 -->
                             <div class="dtbtn crtbtn">
-                                <a href="#" v-on:click="dtCart()"><span>CART</span></a>
-                                <a href="#"><span>BUY</span></a>
+                                <a href="#" v-on:click.prevent="addCart(prdData[dataNum()][$store.state.dtdata])"><span>CART</span></a>
+                                <a href="#" v-on:click.prevent=""><span>BUY</span></a>
                             </div>
                             <div class="dtbtn nPay" v-on:click.prevent="closeFn()">
                                 <a href="#">CLOSE
@@ -311,7 +311,7 @@ Vue.component("goods-comp",{
     methods: {
         // 카트 추가 메서드
         addCart(prdData) {
-            // console.log("해당제품 카트에 추가 시키기:", prdData, prdData.prdImg, prdData.pdInfo.name, prdData.pdInfo.price);
+            console.log("해당제품 카트에 추가 시키기:", prdData);
             let num = 1; // 기본수량
             let arr = [
                 prdData.prdImg,
@@ -352,13 +352,14 @@ Vue.component("goods-comp",{
         },
         // 디테일페이지 카트 추가 메서드
         dtCart(prdData) {
+            // console.log(prdData)
             // 아이디어 : 서브페이지에서 이미지 클릭시 state에 필요한 해당 데이터 다 담아두고
             // (addCart에서 이미 셋팅해둬서 데이터바인딩만 시켜주면 됨)
             // 그리고 디테일에서 카트 클릭시 이 메서드로 바인딩된 데이터를 카트로 보내주면 됨
 
             // !!!!! 이미 디테일 페이지 넘어갈때 만들어둔 store.state 셋팅이 있다!!! 재활용하면 됨!! 대박스
-            console.log("디테일에서 카트추가");
-            console.log("store state dtname : ", store.state.dtname);
+            // console.log("디테일에서 카트추가");
+            // console.log("store state dtname : ", store.state.dtname);
         },
 
         // 정규식함수(숫자 세자리마다 콤마해주는 기능)
@@ -505,7 +506,7 @@ Vue.component("side-comp",{
     template: `
     <ul class="side">
         <!-- 3. 사이드영역 -->
-        <li><a href="#">로그인</a></li>
+        <li><a href="#" v-on:click.prevent="">로그인</a></li>
         <li>
             <a href="#" v-on:click.prevent="cartFn()">
                 <div class="menu__cart">
