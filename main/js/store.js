@@ -103,7 +103,7 @@ export default new Vuex.Store({
         // 디테일 상세정보
         dttit:"",
         dtcont:"",
-        result: 1, // 디테일페이지 계산 함수에 씀
+        result: 1, // 디테일페이지 계산에 쓰는 state
         
         // cart state
         cart: [],
