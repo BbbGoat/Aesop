@@ -343,8 +343,9 @@ Vue.component("goods-comp",{
                 store.state.cart = cartData;
                 store.state.cartNum = opnum;
                 store.state.callout = opnum.length;
-
             }
+
+            $(".callout").css({display:"inline-block"});
 
 
 
@@ -508,11 +509,8 @@ Vue.component("side-comp",{
         <li>
             <a href="#" v-on:click.prevent="cartFn()">
                 <div class="menu__cart">
-                    <span>카트</span>
+                    <div class="txt"><span>카트</span></div>
                     <div class="callout">{{$store.state.callout}}</div>
-                </div>
-                <div>
-                    <span>Close X</span>
                 </div>
             </a>
         </li>
@@ -521,11 +519,8 @@ Vue.component("side-comp",{
     data(){return{}},
     methods: {
         cartFn() {
-            console.log("카트셋팅중");
-
             // 클릭시 창 열림
             $(".cart_comp").toggleClass("open");
-            // 카트 닫기버튼 활성화
         },
     }
 }); ////////////////// Vue 컴포넌트 /////////////////////////
@@ -562,6 +557,9 @@ Vue.component("cart-comp",{
             </div>
             <div class="btn_bx">
                 <div class="buy_btn">BUY</div>
+                <div class="buy_btn" v-on:click="cartClose()">CLOSE
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
             </div>
         </div>
     </div>
@@ -590,6 +588,8 @@ Vue.component("cart-comp",{
             $(".opnum").each((i,v)=>{
                 $(v).val(getItem[i]);
             });
+
+            if (store.state.callout === 0) $(".callout").css({display:"none"});
 
         },
         numberWithCommas(x) {
@@ -638,6 +638,9 @@ Vue.component("cart-comp",{
             // stroe 업데이트
             store.state.cartNum = getItem;
             opnum = getItem;
+        },
+        cartClose() {
+            $(".cart_comp").removeClass("open");
         }
     },
 });
@@ -710,6 +713,10 @@ new Vue({
             
             // callout 최초 셋팅
             store.state.callout = getItem.length;
+            if(store.state.callout === 0) {
+                console.log("안돼");
+                $(".callout").css({display:"none"});
+            }
             
         }
         initCartNum();

@@ -224,7 +224,7 @@ nav.scl .catbx > li > a::before {
 /* 3. 사이드영역 */
 .side {
     display: flex;    
-    gap: 30px;
+    /* gap: 30px; */
     line-height: 80px;
     transition: .4s ease-out;
 }
@@ -272,6 +272,10 @@ nav.scl .side > li a {
     display: flex;
     flex-direction: row;
     align-items: center;
+}
+.menu__cart .txt {
+    width: 70px;
+    text-align: right;
 }
 /* 5. 사이드 카트 영역 */
 .menu__cart .callout {
@@ -370,6 +374,7 @@ nav.scl .side > li a {
     /* font-size: 12px; */
 }
 .btn_bx {
+    display: flex;
     position: relative;
     right: 0;
     bottom: 0;
@@ -384,10 +389,11 @@ nav.scl .side > li a {
     /* margin-top: 20px; */
     text-align: center;
     display: block;
+    width: 100%;
     height: 55px;
     line-height: 55px;
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 15px;
+    border-right: 1px solid #474747;
 }
 .del_cart {
     cursor: pointer;
