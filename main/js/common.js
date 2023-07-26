@@ -348,6 +348,7 @@ Vue.component("goods-comp",{
 
             // 카트 DOM 반영
             let getItem = JSON.parse(localStorage.getItem("opnum"));
+            console.log(getItem);
             $(".opnum").each((i,v)=>{
                 $(v).val(getItem[i]);
             });
@@ -537,7 +538,7 @@ Vue.component("cart-comp",{
                             <a href="#" class="cart__qty-down" v-on:click.prevent="minusBtn(i)">
                                 <span class="cart__minus">-</span>
                             </a>
-                            <input id="cart__quantity" class="opnum" name="cart__quantity_opt[]" value="1" type="text">
+                            <input id="cart__quantity" class="opnum" name="cart__quantity_opt[]" v-bind:value="$store.state.cartNum[i]" type="text">
                             <a href="#" class="cart__qty-up" v-on:click.prevent="plusBtn(i)">
                                 <span class="cart__plus">+</span>
                             </a>
