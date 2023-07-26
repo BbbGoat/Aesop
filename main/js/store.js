@@ -104,13 +104,16 @@ export default new Vuex.Store({
         dttit:"",
         dtcont:"",
 
-        result: 1,
-
+        
         // cart state
         cart: [],
         cartimg: '',
         cartnm: '',
         cartprice: '',
+        
+        // useState
+        result: 1, // 초기값
+        cartNum: [], // 셋팅값
 
 
     }, /////// state 구역 ////////

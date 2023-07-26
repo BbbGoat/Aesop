@@ -16,13 +16,24 @@ import dtimgData from "./gdsData/detailImg.js";
 /************* 로컬스토리지 카트 셋팅 *************/
 // 카트 배열 데이터
 let cartData = [];
+let opnum = [];
 
 // 카트 배열 새로고침 초기화 방지
 const saveCart = localStorage.getItem("cart");
-if (saveCart) {
+const saveNum = localStorage.getItem("opnum");
+if (saveCart) { // 카트에 상품이 있을 경우
     const parseCart = JSON.parse(saveCart);
+    const parseNum = JSON.parse(saveNum);
+    
     store.state.cart = parseCart;
     cartData = parseCart;
+    
+    store.state.cartNum = parseNum;
+    opnum = parseNum;
+}
+else { // 없을경우 최초 초기 셋팅
+    localStorage.setItem("cart",JSON.stringify(cartData));
+    localStorage.setItem("opnum",JSON.stringify(opnum));
 }
 //////////////////////////////////////////////////
 
@@ -301,13 +312,13 @@ Vue.component("goods-comp",{
         // 카트 추가 메서드
         addCart(prdData) {
             // console.log("해당제품 카트에 추가 시키기:", prdData, prdData.prdImg, prdData.pdInfo.name, prdData.pdInfo.price);
-            let num = "1"; // 기본수량
+            let num = 1; // 기본수량
             let arr = [
                 prdData.prdImg,
                 prdData.pdInfo.name,
                 prdData.pdInfo.price,
-                num,
             ];
+            let arr2 = num;
             let getItem = localStorage.getItem("cart");
 
             // 중복데이터 선별 변수 (true/false)
@@ -323,12 +334,14 @@ Vue.component("goods-comp",{
     
                 // 배열 추가
                 cartData.push(arr);
+                opnum.push(arr2);
                 
                 // 로컬스토리지 업데이트
                 localStorage.setItem("cart",JSON.stringify(cartData));
-    
+                localStorage.setItem("opnum",JSON.stringify(opnum));
                 // state 업데이트
                 store.state.cart = cartData;
+                store.state.cartNum = opnum;
     
                 // 전체개수
                 // console.log(cartData.length);
@@ -503,9 +516,13 @@ Vue.component("cart-comp",{
                         <h3>{{v[1]}}</h3>
                         <p>{{numberWithCommas(v[2])}}</p>
                         <span class="cart__quantity">
-                            <a href="#" class="cart__qty-down"><span class="cart__minus">-</span></a>
-                            <input id="cart__quantity" name="cart__quantity_opt[]" value="1" type="text">
-                            <a href="#" class="cart__qty-up"><span class="cart__plus">+</span></a>
+                            <a href="#" class="cart__qty-down" v-on:click.prevent="minusBtn(i)">
+                                <span class="cart__minus">-</span>
+                            </a>
+                            <input id="cart__quantity" class="opnum" name="cart__quantity_opt[]" value="1" type="text">
+                            <a href="#" class="cart__qty-up" v-on:click.prevent="plusBtn(i)">
+                                <span class="cart__plus">+</span>
+                            </a>
                         </span>
 
                     </div>
@@ -527,14 +544,69 @@ Vue.component("cart-comp",{
 
             // 스토리지 업데이트
             cartData.splice(tgNum,1);
+            opnum.splice(tgNum,1);
+
             localStorage.setItem("cart",JSON.stringify(cartData));
+            localStorage.setItem("opnum",JSON.stringify(opnum));
 
             // state 업데이트
             store.state.cart = cartData;
+            store.state.cartNum = opnum;
+
+            // val 입력창 업데이트
+            let getItem = JSON.parse(localStorage.getItem("opnum"));
+            $(".opnum").each((i,v)=>{
+                $(v).val(getItem[i]);
+            });
+
         },
         numberWithCommas(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         },
+        // 더하기버튼
+        plusBtn(tgNum) {
+            let tg = event.currentTarget;
+            let num = $(tg).siblings().eq(1).val();
+            // console.log(num);
+
+            num++;
+
+            // 카피본 생성
+            let getItem = JSON.parse(localStorage.getItem("opnum"));
+
+            // 스토리지 업데이트
+            getItem.splice(tgNum, 1, num);
+            localStorage.setItem("opnum",JSON.stringify(getItem));
+
+            // 입력창 업데이트
+            $(tg).siblings().eq(1).val(num);
+            // store 업데이트
+            store.state.cartNum = getItem;
+            opnum = getItem;
+        },
+        minusBtn(tgNum){
+            let tg = event.currentTarget;
+            let num = $(tg).siblings().val();
+            // console.log(num);
+            
+            num--;
+            
+            // -값 방지
+            if (num === 0) return;
+
+            // 카피본 생성
+            let getItem = JSON.parse(localStorage.getItem("opnum"));
+
+            // 스토리지 업데이트
+            getItem.splice(tgNum, 1, num);
+            localStorage.setItem("opnum",JSON.stringify(getItem));
+
+            // 입력창 업데이트
+            $(tg).siblings().val(num);
+            // stroe 업데이트
+            store.state.cartNum = getItem;
+            opnum = getItem;
+        }
     },
 });
 
@@ -596,6 +668,15 @@ new Vue({
                 $(".cart_bx").removeClass("pdtop");
             }
         }); /////// scroll 이벤트 ///////
+
+        // 카트 데이터 수량부분 최초셋팅
+        function initCartNum() {
+            let getItem = JSON.parse(localStorage.getItem("opnum"));
+            $(".opnum").each((i,v)=>{
+                $(v).val(getItem[i]);
+            });
+        }
+        initCartNum();
 
     } ////////// mounted ///////////
 }); ////////////////// Vue 인스턴스 //////////////////////

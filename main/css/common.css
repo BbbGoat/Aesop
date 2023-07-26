@@ -307,7 +307,7 @@ nav.scl .side > li a {
 .cart_wrap .left {
     width: 50%;
     padding: 10px;
-    
+
     /* background-color: #f0efe1; */
 }
 .cart_wrap .left img {
@@ -397,6 +397,7 @@ nav.scl .side > li a {
     background: transparent;
     color: #333;
     font-size: 1.2rem;
+    border: none;
 }
 
 .cart__minus {
