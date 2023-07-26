@@ -326,7 +326,7 @@ Vue.component("goods-comp",{
 
             if (isB == true) {
                 console.log("중복")
-                alert ("이미 장바구니에 담긴 제품입니다.")
+                alert ("이미 장바구니에 담긴 제품입니다.");
                 return;
             }
             else if (isB == false) {
@@ -342,9 +342,8 @@ Vue.component("goods-comp",{
                 // state 업데이트
                 store.state.cart = cartData;
                 store.state.cartNum = opnum;
-    
-                // 전체개수
-                // console.log(cartData.length);
+                store.state.callout = opnum.length;
+
             }
 
 
@@ -506,12 +505,28 @@ Vue.component("side-comp",{
     <ul class="side">
         <!-- 3. 사이드영역 -->
         <li><a href="#">로그인</a></li>
-        <li><a href="#">카트</a></li>
+        <li>
+            <a href="#" v-on:click.prevent="cartFn()">
+                <div class="menu__cart">
+                    <span>카트</span>
+                    <div class="callout">{{$store.state.callout}}</div>
+                </div>
+                <div>
+                    <span>Close X</span>
+                </div>
+            </a>
+        </li>
     </ul>
     `,
     data(){return{}},
     methods: {
+        cartFn() {
+            console.log("카트셋팅중");
 
+            // 클릭시 창 열림
+            $(".cart_comp").toggleClass("open");
+            // 카트 닫기버튼 활성화
+        },
     }
 }); ////////////////// Vue 컴포넌트 /////////////////////////
 
@@ -568,6 +583,7 @@ Vue.component("cart-comp",{
             // state 업데이트
             store.state.cart = cartData;
             store.state.cartNum = opnum;
+            store.state.callout = opnum.length;
 
             // val 입력창 업데이트
             let getItem = JSON.parse(localStorage.getItem("opnum"));
@@ -685,12 +701,16 @@ new Vue({
             }
         }); /////// scroll 이벤트 ///////
 
-        // 카트 데이터 수량부분 최초셋팅
+        // 카트 데이터 새로고침시 최초셋팅
         function initCartNum() {
             let getItem = JSON.parse(localStorage.getItem("opnum"));
             $(".opnum").each((i,v)=>{
                 $(v).val(getItem[i]);
             });
+            
+            // callout 최초 셋팅
+            store.state.callout = getItem.length;
+            
         }
         initCartNum();
     } ////////// mounted ///////////

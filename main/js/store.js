@@ -103,7 +103,7 @@ export default new Vuex.Store({
         // 디테일 상세정보
         dttit:"",
         dtcont:"",
-
+        result: 1, // 디테일페이지 계산 함수에 씀
         
         // cart state
         cart: [],
@@ -112,8 +112,8 @@ export default new Vuex.Store({
         cartprice: '',
         
         // useState
-        result: 1, // 초기값
         cartNum: [], // 셋팅값
+        callout: 0,
 
 
     }, /////// state 구역 ////////

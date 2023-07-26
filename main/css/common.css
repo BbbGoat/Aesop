@@ -240,6 +240,7 @@ nav.scl .side > li a {
 .top.on .side > li a {
     color: #333;
 }
+
 /* 4. 썸네일영역 */
 .thumb {
     display: flex;
@@ -267,13 +268,42 @@ nav.scl .side > li a {
     color: #333;
 }
 
+.menu__cart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+/* 5. 사이드 카트 영역 */
+.menu__cart .callout {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    margin: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 50%;
+    /* border: 1px solid #f06060; */
+    background-color: #ff3636;
+    text-align: center;
+    transition: .4s ease-out;
+}
+.scl .menu__cart .callout {
+    color: #fff;
+}
+
 
 /***************** 카트 영역 *****************/
 
 .cart_comp {
 
 }
+.cart_comp.open .cart_wrap {
+    transform: translateX(0);
+}
 .cart_wrap {
+    transform: translateX(100%);
     position: absolute;
     top: 0;
     right: 0;
@@ -284,6 +314,7 @@ nav.scl .side > li a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: .3s ease-out;
 }
 .cart_bx {
     overflow-y: auto;
