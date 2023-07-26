@@ -326,7 +326,7 @@ Vue.component("goods-comp",{
 
             if (isB == true) {
                 console.log("중복")
-                alert ("이미 장바구니에 담겼습니다.")
+                alert ("이미 장바구니에 담긴 제품입니다.")
                 return;
             }
             else if (isB == false) {
@@ -494,12 +494,28 @@ Vue.component("goods-comp",{
 }); /////////////////// Vue 컴포넌트 ////////////////////////
 
 
-
-// [2] 뷰컴포넌트 - 푸터
+// [4] 뷰컴포넌트 - 푸터
 Vue.component("detail-comp",{
     template: detailData.detailarea,
 }); //////////////////// Vue 컴포넌트 ///////////////////////
 
+
+// [5] 뷰컴포넌트 - 사이드바
+Vue.component("side-comp",{
+    template: `
+    <ul class="side">
+        <!-- 3. 사이드영역 -->
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">카트</a></li>
+    </ul>
+    `,
+    data(){return{}},
+    methods: {
+
+    }
+}); ////////////////// Vue 컴포넌트 /////////////////////////
+
+// [6] 뷰컴포넌트 - 카트
 Vue.component("cart-comp",{
     template: `   
     <!--여기부터 Cart 컴포넌트-->
@@ -677,7 +693,6 @@ new Vue({
             });
         }
         initCartNum();
-
     } ////////// mounted ///////////
 }); ////////////////// Vue 인스턴스 //////////////////////
 
