@@ -172,6 +172,19 @@ nav.scl .catbx > li > a::before {
     line-height: 1.7;
     font-size: 1.5rem;
 }
+.sub:nth-of-type(2)::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 240px;
+    margin-left: -80px;
+    margin-top: 15px;
+    border-left: 1px solid #ccc;
+}
+.sub:nth-of-type(2) {
+    padding-left: 80px;
+}
 .sub dt.all {
     pointer-events: auto;
 }
@@ -182,10 +195,16 @@ nav.scl .catbx > li > a::before {
 .sub > dd + dd {
     margin-top: 5px;
 }
+/* 강조할 글자 */
+.sub:first-of-type > dt a {
+    font-size: 2rem;
+    font-weight: 500;
+}
 .sub > dt a {
     display: inline-block;
     color: #505050;
-    font-weight: 600;
+    /* font-weight: 500; */
+    font-size: 1.8rem;
     /* display: block; */
 }
 .sub > dt a::after {
@@ -202,6 +221,10 @@ nav.scl .catbx > li > a::before {
     width: 100%;
 }
 
+/* 강조할 글자 */
+.sub:first-of-type > dd a {
+    font-size: 1.7rem;
+}
 .sub > dd a {
     display: inline-block;
     font-size: 1.5rem;

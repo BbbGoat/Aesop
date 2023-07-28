@@ -391,7 +391,63 @@ window.addEventListener("DOMContentLoaded",()=>{
 
     // 최초호출!
     storeFn();
+
+    ////////////////////////////
+    // 추가작업 시작! ///////////
+    ////////////////////////////
+
+    function perfumeFn() {
+
+        // 대상선정
+        const swipBx = $(".swiper-slide");
     
+        // 이벤트 설정
+        swipBx.each((i,v) => {
+            $(swipBx).css({cursor:"pointer"});
+            $(v).click((e)=>{
+                let txt = $(e.currentTarget).find(".txtarea h5").text();
+                localStorage.setItem("detsrc", JSON.stringify(txt));
+                // 이동
+                location.href = "sub.html?cat=perfume&제품 모두 보기&detail";
+            })
+        });
+
+    } //////////////// perfumeFn 함수 ////////////////
+    perfumeFn();
+
+    function bestprdFn() {
+
+        // 대상선정
+        const listbx = $(".listbx");
+
+        // 이벤트 설정
+        listbx.each((i,v) => {
+            $(listbx).css({cursor:"pointer"});
+            $(v).click((e)=>{
+                let txt = $(e.currentTarget).find(".txtarea2 h5").text();
+                localStorage.setItem("detsrc", JSON.stringify(txt));
+                // 이동
+                location.href = "sub.html?cat=skin&제품 모두 보기&detail";
+            })
+        })
+    } //////////////// bestprdFn 함수 ////////////////
+    bestprdFn();
+
+    function blockClick() {
+        // 임시로 클릭 막아두는 함수
+        $(".pimg").click((e)=>{
+            e.preventDefault();
+            alert("추후 공개 예정 콘텐츠입니다.\n감사합니다 ^^")
+        });
+
+        $(".morebtn").click(e=>e.preventDefault());
+        $(".sitemap .list").click(e=>e.preventDefault());
+        
+    } //////////////// blockClick 함수 ////////////////
+    blockClick();
+
+    // 메인 로딩시 로컬스토리지 디테일경로 초기화
+    localStorage.removeItem("detsrc");
     
 
 }); ///////////////////// 로드구역 ///////////////////////
