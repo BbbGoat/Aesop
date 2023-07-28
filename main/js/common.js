@@ -443,6 +443,7 @@ Vue.component("goods-comp",{
                 // 초기화
                 store.state.result = 1;
                 $("#quantity").val(1);
+                localStorage.removeItem("detsrc");
             });
         },
         
@@ -766,11 +767,11 @@ new Vue({
                     if (Boolean(getItem) == false) {
                         fail();
                     }
-                   
-                    success(); // 성공시 await로 전달
+
                     // 조건 충족
                     setTimeout(() => {
-                    }, 10)
+                        success(); // 성공시 await로 전달
+                    }, 500)
                 })
             }
             async function setDetail() {
@@ -778,9 +779,8 @@ new Vue({
                     await promise(Boolean(getItem) == true) // 조건 충족시 아래 실행
                         console.log("await 디테일페이지로");
 
-                        
                         let txt = getItem;
-                        const tgbox = $('.pdInfo-name:contains('+ txt +')');
+                        let tgbox = $('.pdInfo-name:contains('+ txt +')');
                         console.log(tgbox);
 
                         $(tgbox).trigger("click");
