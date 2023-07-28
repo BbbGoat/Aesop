@@ -92,7 +92,7 @@ Vue.component("sub-comp",{
         </div>
         <dl class="sub">
             <dt class="all" v-on:click="linksys($store.state.lnbsrc,'제품 모두 보기')"><a href="#" v-text="$store.state.setsubtit1"></a></dt>
-            <dd v-for="(v,n) in $store.state.setdd1" :key="n" v-on:click="linksys($store.state.lnbsrc,v)"><a href="#">{{v}}</a></dd>
+            <dd v-for="(v,n) in $store.state.setdd1" :key="n" v-on:click.prevent="linksys($store.state.lnbsrc,v)"><a href="#">{{v}}</a></dd>
         </dl>
         <dl class="sub">
             <dt><a href="#" v-text="$store.state.setsubtit2"></a></dt>
@@ -100,14 +100,26 @@ Vue.component("sub-comp",{
             </dl>
         <dl class="sub">
             <dt><a href="#" v-text="$store.state.setsubtit3"></a></dt>
-            <dd v-for="(v,n) in $store.state.setdd3"><a href="#">{{v}}</a></dd>
+            <dd v-for="(v,n) in $store.state.setdd3" :key="n" v-on:click.prevent="[linksys($store.state.lnbsrc,'제품 모두 보기',v)]"><a href="#">{{v}}</a></dd>
         </dl>
     </div>
     `,
     methods: {
-        linksys(gnb,src) {
-            // 링크시스템
-            location.href = "sub.html?cat=" + encodeURIComponent(gnb) +'&'+ encodeURIComponent(src);
+        // 링크시스템
+        linksys(gnb,src,v) {
+            if (Boolean(v)) {
+                location.href = "sub.html?cat=" + encodeURIComponent(gnb) +'&'+ encodeURIComponent(src)+'&'+'detail';
+
+                // 로컬스토리지 업데이트(새로고침 초기화 방지)
+                localStorage.setItem("detsrc", JSON.stringify(v));
+                
+            }
+            else if (Boolean(v) == false) {
+                location.href = "sub.html?cat=" + encodeURIComponent(gnb) +'&'+ encodeURIComponent(src);
+                
+                // 로컬스토리지 업데이트(빈값)
+                localStorage.removeItem("detsrc");
+            }
         },
     },
 }); //////////////////// Vue 컴포넌트 ///////////////////////
@@ -174,7 +186,7 @@ Vue.component("goods-comp",{
                                             <div class="description">
                                                 <!-- 주요정보: 상품명/용량/가격 -->
                                                 <div class="pdInfo">
-                                                    <a href="#">
+                                                    <a href="#" v-on:click.prevent="getData(prdData[dataNum()][i])">
                                                         <h5 class="pdInfo-name" v-text="prdData[dataNum()][i].pdInfo['name']"></h5>
                                                         <div class="pdInfo-info">
                                                             <span v-text="prdData[dataNum()][i].pdInfo['info']"></span>
@@ -659,7 +671,7 @@ new Vue({
     },
     
     mounted() {
-
+        
         // 부드러운 스크롤 JS 호출!
         // startSS();
 
@@ -707,7 +719,7 @@ new Vue({
             // callout 최초 셋팅
             store.state.callout = getItem.length;
             if(store.state.callout === 0) {
-                console.log("안돼");
+                // console.log("장바구니 비었음");
                 $(".callout").css({display:"none"});
             }
             
@@ -742,6 +754,48 @@ new Vue({
                     $(".stktxt > span").text(store.state.curUrl1);
                 }
             });
+
+            
+            // GNB 2,3depth 클릭시 디테일페이지 트리거로 발생
+            let getItem = localStorage.getItem("detsrc");
+            console.log(Boolean(getItem))
+            
+            function promise() {
+                return new Promise((success, fail) => {
+                    // 조건 불충족
+                    if (Boolean(getItem) == false) {
+                        fail();
+                    }
+                   
+                    success(); // 성공시 await로 전달
+                    // 조건 충족
+                    setTimeout(() => {
+                    }, 10)
+                })
+            }
+            async function setDetail() {
+                try {
+                    await promise(Boolean(getItem) == true) // 조건 충족시 아래 실행
+                        console.log("await 디테일페이지로");
+
+                        
+                        let txt = getItem;
+                        const tgbox = $('.pdInfo-name:contains('+ txt +')');
+                        console.log(tgbox);
+
+                        $(tgbox).trigger("click");
+                        
+                        // 디테일박스 열기
+                        // $(".dt_comp").css({visibility:"visible",opacity:1,});     
+                    
+                }
+                catch(error) {
+                    console.log("디테일페이지 아님")
+                }
+            }
+
+            // 최초호출
+            setDetail();
         } ////////////// initCatnum 함수 ////////////////
         // 최초호출!
         initCatnum();
