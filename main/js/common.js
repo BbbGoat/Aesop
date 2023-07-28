@@ -432,13 +432,13 @@ Vue.component("goods-comp",{
             store.state.dtcont = pm.pdDetail['content'];
 
             // 디테일박스 열기
-            $(".dt_comp").css({visibility:"visible",opacity:1,});     
+            $(".dt_comp").css({visibility:"visible",opacity:1, transition: ".3s ease"});     
             
         },
         closeFn(){
             // 박스닫기
             $(".nPay").click((e)=>{
-                $(".dt_comp").css({visibility:"hidden",opacity:0});
+                $(".dt_comp").css({visibility:"hidden",opacity:0, transition: ".0s ease"});
                 
                 // 초기화
                 store.state.result = 1;
