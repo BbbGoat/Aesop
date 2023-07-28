@@ -759,7 +759,7 @@ new Vue({
             
             // GNB 2,3depth 클릭시 디테일페이지 트리거로 발생
             let getItem = localStorage.getItem("detsrc");
-            console.log(Boolean(getItem))
+            // console.log(Boolean(getItem))
             
             function promise() {
                 return new Promise((success, fail) => {
@@ -777,20 +777,18 @@ new Vue({
             async function setDetail() {
                 try {
                     await promise(Boolean(getItem) == true) // 조건 충족시 아래 실행
-                        console.log("await 디테일페이지로");
+                        // console.log("await 디테일페이지로");
 
                         let txt = getItem;
                         let tgbox = $('.pdInfo-name:contains('+ txt +')');
-                        console.log(tgbox);
+                        // console.log(tgbox);
 
+                        // 트리거 발생
                         $(tgbox).trigger("click");
-                        
-                        // 디테일박스 열기
-                        // $(".dt_comp").css({visibility:"visible",opacity:1,});     
                     
                 }
                 catch(error) {
-                    console.log("디테일페이지 아님")
+                    // console.log("디테일페이지 아님")
                 }
             }
 
