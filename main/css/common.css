@@ -207,6 +207,24 @@ nav.scl .catbx > li > a::before {
     font-size: 1.8rem;
     /* display: block; */
 }
+.fa-angle-right {
+    opacity: 0;
+    color: #505050;
+}
+.sub:first-of-type dt:hover .fa-angle-right {
+    opacity: 1;
+    
+    transition: .4s ease;
+    animation: iconAni .3s alternate forwards;
+}
+@keyframes iconAni {
+    from {
+        transform: translateX(0px);
+    }
+    to {
+        transform: translateX(5px);
+    }
+}
 .sub > dt a::after {
     content: '';
     display: block;
