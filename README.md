@@ -1,6 +1,6 @@
 <div align=center>
   
-![header](https://capsule-render.vercel.app/api?type=waving&color=0:3f8e58,50:8cc161,100:92c06c&height=200&section=header&text=Aesop%20site&fontColor=fff&fontSize=70&fontAlign=75&fontAlignY=40)
+![header](https://capsule-render.vercel.app/api?type=waving&color=0:3f8e58,50:8cc161,100:92c06c&height=200&section=header&text=Aesop&fontColor=fff&fontSize=70&fontAlign=75&fontAlignY=40)
 
 
 # 🌿 Aesop
