@@ -9,8 +9,12 @@ Vue.js를 사용해 부분 싱글페이지로 제작한 포트폴리오 사이�
 서브페이지와 디테일페이지의 데이터바인딩을 중점으로 작업했습니다.<br>
 <br>
 👉 <a href="https://bbbgoat.github.io/Aesop/main/index.html/">사이트이동</a> <br>
-📎 <a href="https://bbbgoat.github.io/Aesop/aesop_guide.pdf">가이드문서</a>
-<div style="color:red">* 데스크탑 이용을 권장합니다🙇‍♂️</div>
+`데스크탑 이용을 권장합니다🙇‍♂️`<br>
+
+📎 <a href="https://bbbgoat.github.io/Aesop/aesop_guide.pdf">가이드문서</a> <br>
+`자세한 내용이 궁금하다면 참고해주세요`<br>
+
+
 <br>
 
 ### 🌱 사용언어
