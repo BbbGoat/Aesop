@@ -13,6 +13,7 @@ Vue.js를 사용해 부분 싱글페이지로 제작한 포트폴리오 사이�
 👉 <a href="https://bbbgoat.github.io/Aesop/main/index.html/">사이트이동</a> <br>
 `데스크탑 이용을 권장합니다 🙇‍♂️` <br>
 <br>
+
 🔍 <a href="https://bbbgoat.github.io/Aesop/aesop_guide.pdf">가이드문서</a> <br>
 `자세한 내용이 궁금하다면?`<br>
 <br>
