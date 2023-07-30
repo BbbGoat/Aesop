@@ -10,7 +10,7 @@ Vue.js를 사용해 부분 싱글페이지로 제작한 포트폴리오 사이�
 <br>
 👉 <a href="https://bbbgoat.github.io/Aesop/main/index.html/">사이트이동</a> <br>
 📎 <a href="https://bbbgoat.github.io/Aesop/aesop_guide.pdf">가이드문서</a>
-<p color=#383838>* 데스크탑 이용을 권장합니다🙇‍♂️</p>
+<div style="color:red">* 데스크탑 이용을 권장합니다🙇‍♂️</div>
 <br>
 
 ### 🌱 사용언어
