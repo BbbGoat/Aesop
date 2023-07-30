@@ -228,14 +228,14 @@ nav.scl .catbx > li > a::before {
 .sub > dt a::after {
     content: '';
     display: block;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #505050;
     width: 0;
     transition: .3s ease;
 }
 .sub > dt a:hover::after {
     content: '';
     display: block;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #505050;
     width: 100%;
 }
 

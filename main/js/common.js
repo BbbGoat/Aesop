@@ -96,7 +96,7 @@ Vue.component("sub-comp",{
         </dl>
         <dl class="sub">
             <dt><a href="#" v-text="$store.state.setsubtit2"></a></dt>
-            <dd v-for="(v,n) in $store.state.setdd2"><a href="#">{{v}}</a></dd>
+            <dd v-for="(v,n) in $store.state.setdd2" :key="n" v-on:click.prevent="[linksys($store.state.lnbsrc,'제품 모두 보기',v)]"><a href="#">{{v}}</a></dd>
             </dl>
         <dl class="sub">
             <dt><a href="#" v-text="$store.state.setsubtit3"></a></dt>
