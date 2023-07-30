@@ -7,17 +7,13 @@
 
 Vue.js를 사용해 부분 싱글페이지로 제작한 포트폴리오 사이트입니다.<br>
 서브페이지와 디테일페이지의 데이터바인딩을 중점으로 작업했습니다.<br>
-👉 <a href="https://bbbgoat.github.io/Aesop/main/index.html/">사이트를 보고싶다면 여기를 클릭하세요!</a> <br>
-<a href="https://bbbgoat.github.io/Aesop/aesop_guide.pdf">📎 가이드문서</a>
-
+<br>
+👉 <a href="https://bbbgoat.github.io/Aesop/main/index.html/">사이트이동</a> <br>
+📎 <a href="https://bbbgoat.github.io/Aesop/aesop_guide.pdf">가이드문서</a>
+<p color=#383838>* 데스크탑 이용을 권장합니다🙇‍♂️</p>
 <br>
 
-### 📌 주의사항
-미디어쿼리 미지원으로 원활한 이용을 위해 데스크탑 접속을 권장합니다.
-
-<br>
-
-### 📇 사용언어
+### 🌱 사용언어
 
 <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=flat&logo=Vue.js&logoColor=white"/> <img src="https://img.shields.io/badge/html5-E34F26?style=flat&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/css3-1572B6?style=flat&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=flat&logo=javascript&logoColor=white"/> <img src="https://img.shields.io/badge/jquery-0769AD?style=flat&logo=jquery&logoColor=white"/>
 
@@ -25,14 +21,14 @@ Vue.js를 사용해 부분 싱글페이지로 제작한 포트폴리오 사이�
 
 
 
-# 🔍 사이트 미리보기
+# 🌿 사이트 미리보기
 
 아래는 세부적인 사이트 구성 설명입니다.<br>
 사이트 이용에 참고해주세요!
 
 <br>
 
-### 🖌 구조도
+### 🌱 구조도
 
 ![page](https://user-images.githubusercontent.com/120539949/255511124-e17c7ee9-6ec9-4b59-b6a8-9d92f5476217.png)
 
@@ -42,7 +38,7 @@ Vue.js를 사용해 부분 싱글페이지로 제작한 포트폴리오 사이�
 
 <br>
 
-### 🖌 그래픽요소
+### 🌱 그래픽요소
 
 사이트의 포인트가 되는 그래픽 요소들입니다. <br>
 사용자의 흥미를 유발하기 위해 다양한 이벤트를 사용했습니다.<br>
