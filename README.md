@@ -59,6 +59,8 @@ GNB에서 원하는 카테고리를 클릭하면 서브페이지로 이동하며
 <img src="https://user-images.githubusercontent.com/120539949/252867792-ee1388de-1b89-44b2-9908-51966ecb7e28.gif" width="400px" />
 <br>
 
+<img src="https://user-images.githubusercontent.com/120539949/257463126-175b19f3-f498-4be5-9a99-2bf4f578cec7.png" width="800px" />
+<img src="https://user-images.githubusercontent.com/120539949/257463146-4c2c5108-e7c9-4812-8790-e85bc15fc111.png" width="800px" />
 
 <img src="https://github.com/BbbGoat/Aesop/assets/120539949/dc535ddb-bdf7-457d-a921-e2c521c758bf" width="200px" />
 
