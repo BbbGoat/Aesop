@@ -45,8 +45,13 @@ GNB에서 원하는 카테고리를 클릭하면 서브페이지로 이동하며
 
 <br>
 
-<img src="https://user-images.githubusercontent.com/120539949/257465212-158c2469-d3f6-48cd-b800-7dd8d20a5d52.png" width="400px" />
-<img src="https://user-images.githubusercontent.com/120539949/257463146-4c2c5108-e7c9-4812-8790-e85bc15fc111.png" width="400px" />
+<img src="https://user-images.githubusercontent.com/120539949/257465212-158c2469-d3f6-48cd-b800-7dd8d20a5d52.png" width="800px" />
+<img src="https://user-images.githubusercontent.com/120539949/257463146-4c2c5108-e7c9-4812-8790-e85bc15fc111.png" width="800px" />
+
+<br>
+<br>
+<br>
+
 
 ### 🌱 장바구니 기능
 
@@ -64,9 +69,6 @@ GNB에서 원하는 카테고리를 클릭하면 서브페이지로 이동하며
 
 ### 📎 더 자세한 가이드라인
 
-<img src="https://github.com/BbbGoat/Aesop/assets/120539949/dc535ddb-bdf7-457d-a921-e2c521c758bf" width="200px" />
-
-<img src="https://github.com/BbbGoat/Aesop/assets/120539949/dc535ddb-bdf7-457d-a921-e2c521c758bf" width="200px" />
 
 📋 <a href="https://bbbgoat.github.io/Aesop/aesop_guide.pdf">이 문서를 참고해주세요!</a>
 
