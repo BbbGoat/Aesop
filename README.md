@@ -45,31 +45,28 @@ GNB에서 원하는 카테고리를 클릭하면 서브페이지로 이동하며
 
 <br>
 
+<img src="https://user-images.githubusercontent.com/120539949/257465212-158c2469-d3f6-48cd-b800-7dd8d20a5d52.png" width="400px" />
+<img src="https://user-images.githubusercontent.com/120539949/257463146-4c2c5108-e7c9-4812-8790-e85bc15fc111.png" width="400px" />
+
 ### 🌱 장바구니 기능
 
 로컬스토리지를 이용한 장바구니 기능입니다. <br>
 관심상품을 추가하고 수량 옵션 조절과 제거가 가능합니다.<br>
 디테일페이지에서 수량을 조절 후 추가하면 선택한 수량 만큼 해당 데이터를 담습니다.<br>
 만일 중복된 데이터를 추가할 경우 안내 메시지와 함께 리턴됩니다.<br>
-
-<br>
-<img src="https://user-images.githubusercontent.com/120539949/252867059-e14ce744-70f5-4b25-847a-f01c0c401b20.gif" width="400px" />
-<img src="https://user-images.githubusercontent.com/120539949/252867748-c922d3ff-8ed5-4959-881f-611f59e12b4a.gif" width="400px" />
-<img src="https://user-images.githubusercontent.com/120539949/252865447-f97ad51f-4357-4340-956c-ec2252e53d6e.gif" width="400px" />
-<img src="https://user-images.githubusercontent.com/120539949/252867792-ee1388de-1b89-44b2-9908-51966ecb7e28.gif" width="400px" />
 <br>
 
 <img src="https://user-images.githubusercontent.com/120539949/257463126-175b19f3-f498-4be5-9a99-2bf4f578cec7.png" width="800px" />
-<img src="https://user-images.githubusercontent.com/120539949/257463146-4c2c5108-e7c9-4812-8790-e85bc15fc111.png" width="800px" />
-
-<img src="https://github.com/BbbGoat/Aesop/assets/120539949/dc535ddb-bdf7-457d-a921-e2c521c758bf" width="200px" />
-
 <br>
 <br>
 <br>
 
 
 ### 📎 더 자세한 가이드라인
+
+<img src="https://github.com/BbbGoat/Aesop/assets/120539949/dc535ddb-bdf7-457d-a921-e2c521c758bf" width="200px" />
+
+<img src="https://github.com/BbbGoat/Aesop/assets/120539949/dc535ddb-bdf7-457d-a921-e2c521c758bf" width="200px" />
 
 📋 <a href="https://bbbgoat.github.io/Aesop/aesop_guide.pdf">이 문서를 참고해주세요!</a>
 
