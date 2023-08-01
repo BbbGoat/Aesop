@@ -41,12 +41,12 @@ URL로 해당 값을 넘겨받으며 필요한 데이터를 페이지간 연동�
 
 사이트는 메인페이지, 서브페이지로 구성됐습니다. <br>
 GNB에서 원하는 카테고리를 클릭하면 서브페이지로 이동하며 해당 카테고리 데이터가 셋업됩니다. <br>
-서브페이지에서 제품 클릭시 해당 데이터를 담은 제품 디테일 창이 뜹니다. <br>
+또, 서브페이지에서 제품 클릭시 해당 데이터를 담은 제품 디테일 창이 뜹니다. <br>
 
 <br>
+<br>
 
-<img src="https://user-images.githubusercontent.com/120539949/257465212-158c2469-d3f6-48cd-b800-7dd8d20a5d52.png" width="600px" />
-
+<img src="https://user-images.githubusercontent.com/120539949/257465212-158c2469-d3f6-48cd-b800-7dd8d20a5d52.png" width="600px" /> <br>
 <img src="https://user-images.githubusercontent.com/120539949/257463146-4c2c5108-e7c9-4812-8790-e85bc15fc111.png" width="600px" />
 
 <br>
