@@ -45,8 +45,9 @@ GNB에서 원하는 카테고리를 클릭하면 서브페이지로 이동하며
 
 <br>
 
-<img src="https://user-images.githubusercontent.com/120539949/257465212-158c2469-d3f6-48cd-b800-7dd8d20a5d52.png" width="800px" />
-<img src="https://user-images.githubusercontent.com/120539949/257463146-4c2c5108-e7c9-4812-8790-e85bc15fc111.png" width="800px" />
+<img src="https://user-images.githubusercontent.com/120539949/257465212-158c2469-d3f6-48cd-b800-7dd8d20a5d52.png" width="600px" />
+
+<img src="https://user-images.githubusercontent.com/120539949/257463146-4c2c5108-e7c9-4812-8790-e85bc15fc111.png" width="600px" />
 
 <br>
 <br>
@@ -61,7 +62,7 @@ GNB에서 원하는 카테고리를 클릭하면 서브페이지로 이동하며
 만일 중복된 데이터를 추가할 경우 안내 메시지와 함께 리턴됩니다.<br>
 <br>
 
-<img src="https://user-images.githubusercontent.com/120539949/257463126-175b19f3-f498-4be5-9a99-2bf4f578cec7.png" width="800px" />
+<img src="https://user-images.githubusercontent.com/120539949/257463126-175b19f3-f498-4be5-9a99-2bf4f578cec7.png" width="600px" />
 <br>
 <br>
 <br>
