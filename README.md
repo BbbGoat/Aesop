@@ -31,17 +31,13 @@ URL로 해당 값을 넘겨받으며 필요한 데이터를 페이지간 연동�
 <br>
 <br>
 
-# 🌿 사이트 미리보기
-<br>
-
-아래는 세부적인 사이트 구성 설명입니다.<br>
-사이트 이용에 참고해주세요!
+# 🌿 사이트 구성
 
 <br>
 
 ### 🌱 구조도
 
-![page](https://user-images.githubusercontent.com/120539949/255511124-e17c7ee9-6ec9-4b59-b6a8-9d92f5476217.png)
+![layer](https://github.com/BbbGoat/Aesop/assets/120539949/0ac9a39e-47fb-467c-ba80-a7d2ce90403c)
 
 사이트는 메인페이지, 서브페이지로 구성됐습니다. <br>
 GNB에서 원하는 카테고리를 클릭하면 서브페이지로 이동하며 해당 카테고리 데이터가 셋업됩니다. <br>
@@ -49,7 +45,7 @@ GNB에서 원하는 카테고리를 클릭하면 서브페이지로 이동하며
 
 <br>
 
-### 🌱 장바구니 기능 구현
+### 🌱 장바구니 기능
 
 로컬스토리지를 이용한 장바구니 기능입니다. <br>
 관심상품을 추가하고 수량 옵션 조절과 제거가 가능합니다.<br>
@@ -63,6 +59,8 @@ GNB에서 원하는 카테고리를 클릭하면 서브페이지로 이동하며
 <img src="https://user-images.githubusercontent.com/120539949/252867792-ee1388de-1b89-44b2-9908-51966ecb7e28.gif" width="400px" />
 <br>
 
+
+<img src="https://github.com/BbbGoat/Aesop/assets/120539949/dc535ddb-bdf7-457d-a921-e2c521c758bf" width="200px" />
 
 <br>
 <br>
